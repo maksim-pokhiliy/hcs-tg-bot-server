@@ -22,10 +22,14 @@ app.use((err: Error, _: Request, res: Response) => {
   });
 });
 
-export { app };
-
+// Для локальной разработки
 if (import.meta.url === `file://${process.argv[1]}`) {
   app.listen(config.port, () => {
     console.info(`Server is running on port ${config.port}`);
   });
+}
+
+// Экспорт для Vercel
+export default function handler(req: Request, res: Response) {
+  return app(req, res);
 }
