@@ -3,6 +3,5 @@
     "noEmit": false,
     "outDir": "dist"
   },
-  "exclude": ["**/*.test.ts", "**/__mocks__/*"],
   "extends": "./tsconfig.json"
 }

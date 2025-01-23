@@ -1,18 +1,9 @@
-import { RequestHandler } from "express";
+import type { Request, Response } from "express";
 
 import { sendTelegramMessage } from "../services/telegramService.js";
 import { validateEmail } from "../utils/validators.js";
 
-interface RequestBody {
-  name: string;
-  email: string;
-  request: string;
-}
-
-export const handlePlaceRequest: RequestHandler<unknown, unknown, RequestBody> = async (
-  req,
-  res,
-) => {
+export const handlePlaceRequest = async (req: Request, res: Response) => {
   try {
     const { name, email, request } = req.body;
 

@@ -104,14 +104,6 @@ const config = [
       },
     },
   },
-  {
-    files: ["**/*.test.ts"],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
-    },
-  },
 ];
 
 export default config;
