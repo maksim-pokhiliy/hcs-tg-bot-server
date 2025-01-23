@@ -29,6 +29,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
+// Экспорт для тестов
+export { app };
+
 // Экспорт для Vercel
 export default function handler(req: Request, res: Response) {
   return app(req, res);
